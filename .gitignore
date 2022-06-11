@@ -33,7 +33,3 @@
 
 .vs
 Debug
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
