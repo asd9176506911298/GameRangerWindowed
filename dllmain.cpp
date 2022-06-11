@@ -31,12 +31,10 @@ BOOL __stdcall hCreateProcessA(LPCSTR lpApplicationName,
 
     path.append("-window");
 
-    std::cout << path << std::endl;
-
-    char* cstr = &path[0];
+    char* WindowedCommandLine = &path[0];
 
     return oCreateProcessA(lpApplicationName,
-        cstr,
+        WindowedCommandLine,
         lpProcessAttributes,
         lpThreadAttributes,
         bInheritHandles,
