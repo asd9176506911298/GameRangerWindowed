@@ -1,4 +1,6 @@
 # GameRangerWindowed
+Used to bypass around GameRanger limitation of not being able to launch Warcraft III in windowed mode.
+
 Other Game maybe work
 
 Only tested for *Warcraft III: Frozen Throne*.
