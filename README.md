@@ -21,7 +21,7 @@ The configuration file WindowedConfig.txt settings:
 ![Cover](https://user-images.githubusercontent.com/35301327/174141239-4e4c476e-bb0e-4978-a36a-90bdaf730e0c.png)
 
 ## Troubleshoot
-if pop up error please install Redistributable
+if pop up error please install Microsoft Visual C++ 2015 Redistributable
 
 ![messageImage_1655413451691](https://user-images.githubusercontent.com/35301327/174163415-bbc644cb-7069-4548-a677-864d9ed3f834.jpg)
 
