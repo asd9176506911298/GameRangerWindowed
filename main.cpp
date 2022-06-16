@@ -136,12 +136,15 @@ BOOL __stdcall hCreateProcessA(LPCSTR lpApplicationName,
 	LPSTARTUPINFOA lpStartupInfo,
 	LPPROCESS_INFORMATION lpProcessInformation)
 {
+	//Get Game Path
 	std::string path = std::string(lpCommandLine);
 
+	//command line add -windowed
 	path.append("-window");
 
 	char* WindowedCommandLine = &path[0];
-
+	
+	//return -window commandline
 	return oCreateProcessA(lpApplicationName,
 		WindowedCommandLine,
 		lpProcessAttributes,
@@ -162,14 +165,20 @@ DWORD WINAPI HackThread(HMODULE hModule)
 	FILE* f;
 	freopen_s(&f, "CONOUT$", "w", stdout);
 #endif
-	//Get Config if true set Windowed
+	//Get Config if true set Windowed mode
 	std::string isWindowed;
 	std::ifstream WindowedConfigFile("WindowedConfig.txt");
 	getline(WindowedConfigFile, isWindowed);
+	//to Lowercase 
 	std::transform(isWindowed.begin(), isWindowed.end(), isWindowed.begin(), ::tolower);
+
+#ifdef _DEBUG
 	std::cout << isWindowed << std::endl;
+#endif
+
 	if(isWindowed.compare("true") == 0)
 	{
+		//Hook
 		oCreateProcessA = (tCreateProcessA)GetProcAddress(GetModuleHandle("KernelBase.dll"), "CreateProcessA");
 		oCreateProcessA = (tCreateProcessA)mem::TrampHook32((BYTE*)oCreateProcessA, (BYTE*)hCreateProcessA, 5);
 	}
