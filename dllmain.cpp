@@ -1,6 +1,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
 #include "mem.h"
+#include "version.h"
 #include <iostream>
 
 typedef BOOL(__stdcall* tCreateProcessA)(LPCSTR lpApplicationName,
@@ -48,7 +49,7 @@ BOOL __stdcall hCreateProcessA(LPCSTR lpApplicationName,
 DWORD WINAPI HackThread(HMODULE hModule)
 {
 
-    oCreateProcessA = (tCreateProcessA)GetProcAddress(GetModuleHandle(L"KernelBase.dll"), "CreateProcessA");
+    oCreateProcessA = (tCreateProcessA)GetProcAddress(GetModuleHandle("KernelBase.dll"), "CreateProcessA");
     oCreateProcessA = (tCreateProcessA)mem::TrampHook32((BYTE*)oCreateProcessA, (BYTE*)hCreateProcessA, 5);
 
     return 0;
@@ -62,7 +63,9 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        CreateThread(0, 0, (LPTHREAD_START_ROUTINE)HackThread, hModule, 0, 0);
+        DisableThreadLibraryCalls(hModule);
+        CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)Load, hModule, NULL, NULL);
+        HackThread(hModule);
         break;
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
