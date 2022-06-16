@@ -19,3 +19,7 @@ The configuration file WindowedConfig.txt settings:
 
 ## Screenshot
 ![Cover](https://user-images.githubusercontent.com/35301327/174141239-4e4c476e-bb0e-4978-a36a-90bdaf730e0c.png)
+
+## troubleshoot
+if pop up msvcp140.dll please install Redistributable
+https://www.microsoft.com/en-us/download/details.aspx?id=53840
