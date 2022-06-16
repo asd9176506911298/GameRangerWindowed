@@ -4,7 +4,7 @@ Other Game maybe work
 Only tested for *Warcraft III: Frozen Throne*.
 
 # Video Tutorial
-https://youtu.be/Q_h-jq2F-4Y
+https://youtu.be/USFxM34xFBY
 
 # Version Proxy (version.dll)
 Will automatically be loaded by the GameRanger itself if the dll is in the GameRanger directory.
