@@ -124,6 +124,7 @@ namespace AheadLib
 using namespace AheadLib;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Hook CreateProcessA
 BOOL __stdcall hCreateProcessA(LPCSTR lpApplicationName,
 	LPSTR lpCommandLine,
 	LPSECURITY_ATTRIBUTES lpProcessAttributes,
@@ -153,6 +154,7 @@ BOOL __stdcall hCreateProcessA(LPCSTR lpApplicationName,
 		lpProcessInformation);
 }
 
+
 DWORD WINAPI HackThread(HMODULE hModule)
 {
 #ifdef _DEBUG
@@ -160,6 +162,7 @@ DWORD WINAPI HackThread(HMODULE hModule)
 	FILE* f;
 	freopen_s(&f, "CONOUT$", "w", stdout);
 #endif
+	//Get Config if true set Windowed
 	std::string isWindowed;
 	std::ifstream WindowedConfigFile("WindowedConfig.txt");
 	getline(WindowedConfigFile, isWindowed);
