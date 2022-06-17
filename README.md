@@ -1,7 +1,18 @@
 # GameRangerWindowed
 Used to bypass around GameRanger limitation of not being able to launch Warcraft III in windowed mode.
 
-Other Game maybe work
+CreateProcessA second argument lpCommandLine is game Path 
+```
+D:\Application\Warcraft III\war3.exe
+```
+
+append `-window` and return CreateProcessA
+
+```
+D:\Application\Warcraft III\war3.exe -window
+```
+
+Other Game maybe work not test
 
 Only tested for *Warcraft III: Frozen Throne*.
 
