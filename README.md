@@ -41,6 +41,8 @@ if pop up error please install Microsoft Visual C++ 2015 Redistributable
 https://www.microsoft.com/en-us/download/details.aspx?id=53840
 
 # Useful Link
+https://guidedhacking.com/threads/ghb0-game-hacking-bible-introduction.14450/
+
 https://guidedhacking.com/threads/ghb1-start-here-beginner-guide-to-game-hacking.5911/
 
 https://guidedhacking.com/threads/how-to-hack-any-game-tutorial-c-trainer-3-first-internal.12142/
